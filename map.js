@@ -1,11 +1,5 @@
 $(function () {
 
-    $('#test').click(function(){
-        alert('clicked');
-    });
-
-    alert('i like javasript');
-
     // Prepare demo data
     var data = [
         {
@@ -221,7 +215,7 @@ $(function () {
     $('#mymap').highcharts('Map', {
 
         title : {
-            text : 'Highmaps basic demo'
+            text : 'State Level Data Title'
         },
 
         subtitle : {
@@ -229,7 +223,7 @@ $(function () {
         },
 
         mapNavigation: {
-            enabled: true,
+            enabled: false,
             buttonOptions: {
                 verticalAlign: 'bottom'
             }

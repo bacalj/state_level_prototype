@@ -1,12 +1,8 @@
 /* layout and global */
-body {
-	font-family: Helvetica;
-}
-
 #body-wrapper {
-	//background-image: url(/img/home_bg_texture.png);
-	//background-repeat: repeat;
-	border: 1px dotted blue;
+	font-family: Helvetica;
+	background-image: url(img/home_bg_texture.png);
+	background-repeat: repeat;
 }
 
 #branding {
@@ -26,42 +22,222 @@ body {
 	width:866px;
 	margin: 0 auto;
 	border: 3px solid white;
-	//border-radius: 10px;
 	padding: 15px;
 	background-color: white;
 }
 
 h2 {
 	font-size:18px;
+	color:#528171;
+	text-decoration: underline;
 }
 
-li {
+li, p {
 	margin-bottom: 8px;
 }
 
-p {
-	margin-bottom: 9px;
-}
 /* title areas */ 
 .title-wrap {
-	margin-bottom: 10px;
-	//border:1px dotted white;
+	margin-bottom: 5px;
 }
 
 .bb {
-	//border:1px dotted white;
 	border-bottom: 2px solid #f3f3f3;
 	margin-bottom: 8px;
 }
 
-#container {
-    height: 500px; 
-    min-width: 310px; 
-    max-width: 800px; 
-    margin: 0 auto; 
+.icon {
+	float:left;
+	margin-top: -10px;
+	padding:5px;
+	margin-right: 7px;
 }
-.loading {
-    margin-top: 10em;
-    text-align: center;
-    color: gray;
+
+#spotlight-title {
+	line-height: 2.3
+}
+
+#icon-details-small {
+	background-color: #EF9017;
+	border-radius: 30px;
+	width:30px;
+	height:30px;
+	float:left;
+	margin-top: 15px;
+	padding:5px;
+	margin-right: 10px;
+}
+
+.help-button {
+	height:20px;
+	width:20px;
+	color:white;
+	background-color:#0980AF;
+	border-radius:20px;
+	float:right;
+	font-size:16px;
+	text-align:center;
+	line-height: 20px;
+}
+
+.title-text-area {
+	padding-left: 10px;
+	width:700px;
+	margin-top: -17px;
+	height:54px;
+}
+
+.title-text-area p {
+	padding-top: 3px;
+}
+
+.title-text-area-2 {
+	padding-left: 10px;
+	width:650px;
+	//margin-top: -17px;
+}
+
+.title-text-map {
+	color:#234F7E;
+	font-weight: bold;
+}
+
+#subtitle-text{
+	font-size: 11px;
+	font-weight: bold;
+}
+
+#sub-subtitle-text {
+	font-size: 10px;
+}
+
+
+
+
+/* the transport bar */
+.transport-bar {
+	width:855px;
+	margin:0 auto;
+	background-color: #E6EAED;
+	margin-bottom: 30px;
+	margin-top:20px;
+	color: #0980AF;
+	font-weight: bold;
+	height:29px;
+	text-align: center;
+}
+
+.t-left, .t-right, .t-center {
+	display: inline-block;
+	background-color: #E6EAED;
+	height: 24px;
+	padding:2px;
+	font-size: 12px;
+	line-height: 26px;
+}
+
+.t-left {
+	float:left;
+	text-align: left;
+	margin-left: 7px;
+}
+
+.t-right {
+	float: right;
+	text-align: right;
+	margin-right: 7px;
+}
+
+.t-center img {
+	padding: 0px 6px 0px 4px;
+}
+
+.t-center span {
+	float:right;
+}
+
+.t-left span {
+	float:right;
+	margin-left: 10px;
+}
+
+.t-right span {
+	float: left;
+	margin-right: 10px;
+}
+
+#myMap {
+	margin-bottom: 20px;
+}
+/*
+
+*/
+
+/* within the chart */
+#overview-container, 
+#details-container {
+	margin: 0 auto;
+	width:800px;
+}
+
+.highcharts-tooltip {
+	z-index: 9999 !important;
+	padding: 0px;
+	white-space: normal;
+	padding:15px;
+}
+
+
+
+/* Data text and table area */
+table {
+	width:100%;
+	float:left;
+	font-size: 10px;
+	border-collapse: collapse;
+	margin: 0 auto;
+	clear:both;
+}
+
+td {
+	padding:5px;
+	border-bottom: 2px solid #f3f3f3;
+	vertical-align: top;
+	//border:1px dotted green;
+}
+
+th {
+	text-align: left;
+	height:20px;
+	border-top: 2px solid #f3f3f3;
+	border-bottom: 2px solid #f3f3f3;
+	vertical-align: middle;
+}
+
+
+
+/* footnote area */ 
+p#data-source {
+	font-size: 10px;
+	padding-bottom: 20px;
+}
+
+#data-source span {
+	font-weight: bold;
+}
+
+#footnotes-title {
+	width:300px;
+	font-size: 16px;
+	font-weight: bold;
+	color:#528171; //green
+	margin-top: 8px;
+}
+
+.footnote-wrap {
+	font-size: 11px;
+}
+
+.clearfix {
+	clear:both;
 }

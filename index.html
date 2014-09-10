@@ -12,17 +12,81 @@
 </head>
 
 <body>
-	<div id="body-wrapper">
-		<div id="page-wrap">
-		Hello I'm the page. 
-		<!--Map Area-->
-			<div id="map-wrap">
-				<div id="mymap"></div>
+<div id="body-wrapper">
+	<div id='branding'></div>
+	<div id='navigation'></div>
+	<div id="page-wrap">
+		
+		<!-- title Area -->
+		<div class='title-wrap bb'>
+			<div class='help-button'>?</div>
+			<div class='icon'><img style="width:50px;" src="img/usa.png"></div>
+			<div class='title-text-area'>
+				<p> 
+					<span class='title-text-map'>State-level Data</span><br>
+					<span id="subtitle-text">Adults receiving colorectal cancer screening based on most recent guidelines (age adjusted, percent, 50–75 years)</span><br>
+				</p>
+			</div>	
+		</div>
+    
+    <!--transport bar-->
+		<div class='transport-bar'>
+				
+			<div class='transport t-left'>
+				<img src="img/left-arrows.png">
+				<img src="img/left-arrow.png">
+				<span class="year">2008</span>
 			</div>
 
-			<button id='test'>test jquery</button>
+			<div class='transport t-center'>
+				<span class="spotlight">2009</span>
+			</div>
 
-		</div> <!--end page wrap -->
-	</div> <!--end body wrap -->
+			<div class='transport t-right'>
+				<span class="year">2010</span>
+				<img src="img/right-arrow.png">
+				<img src="img/right-arrows.png">
+			</div>
+		</div>
+		
+		<!--map Area-->
+		<div id="map-wrap">
+			<div id="mymap"></div>
+		</div> 
+
+		<!--map footnotes-->
+		<div class='footnote-wrap bb' style="padding-bottom:8px;">
+			<strong>Data Source:</strong> National Health Interview Survey (NHIS). Centers for Disease Control and Prevention, National Center for Health Statistics.<br>
+			<strong>Error Bar(I)</strong> represents the 90% confidence interval.<br>
+			Additional footnotes may apply to these data. Please refer to footnotes below the data table for further information. 
+		</div>
+
+		<!--data table heading-->
+		<h2>C-16 Increase the proportion of adults who receive a colorectal cancer screening based on the most recent guidelines</h2>
+		<p style="margin-top:-12px; font-size:11px;">Adults receiving colorectal cancer screening based on most recent guidelines (age adjusted, percent, 50–75 years)</p>
+
+		<!--data table-->
+		<div class='table-wrap'>
+			<table><tbody>
+				<tr>
+					<th class="left">Populations</th>
+				<tr>
+
+				<tr>
+					<td>I </td>
+					<td>like </td>
+					<td>cheese</td>
+					<td>today </td>
+				</tr>
+			</tbody></table>
+		</div>
+
+	</div>
+</div>
 </body>
 </html>
+
+
+
+
+
