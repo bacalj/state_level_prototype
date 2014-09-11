@@ -219,6 +219,11 @@ $(function () {
             text : 'Source map: <a href="http://code.highcharts.com/mapdata/countries/us/us-all.js">United States of America</a>'
         },
 
+        legend: {
+            enabled: true,
+            layout:'horizontal'
+        },
+
         mapNavigation: {
             enabled: false,
             buttonOptions: {
@@ -226,30 +231,66 @@ $(function () {
             }
         },
 
-        colorAxis: {
-            min: 0
-        },
+        
+            colorAxis: {
+                dataClasses: [{
+                    to: 59.1,
+                    color: 'rgba(19,64,117,0.05)'
+                }, {
+                    from: 59.1,
+                    to: 61.15,
+                    color: 'rgba(19,64,117,0.2)'
+                }, {
+                    from: 61.15,
+                    to: 64.95,
+                    color: 'rgba(19,64,117,0.4)'
+                }, {
+                    from: 64.95,
+                    to: 70.5,
+                    color: 'rgba(19,64,117,0.5)'
+                }/*, {
+                    from: 100,
+                    to: 300,
+                    color: 'rgba(19,64,117,0.6)'
+                }, {
+                    from: 300,
+                    to: 1000,
+                    color: 'rgba(19,64,117,0.8)'
+                }, {
+                    from: 1000,
+                    color: 'rgba(19,64,117,1)'
+                }*/]
+            },
+    
 
         series : [{
             data : data,
             mapData: Highcharts.maps['countries/us/us-all'],
             joinBy: 'hc-key',
-            name: 'Random data',
+            name: 'Screening',
             states: {
                 hover: {
                     color: '#BADA55'
                 }
             },
+
             dataLabels: {
                 enabled: true,
-                format: '{point.name}'
-            }
+                formatter: function () {
+                    return this.point.properties['hc-a2'];
+                },
+                
+                style: {
+                    fontSize: '9px'
+                }
+            },  
+
         }, {
             name: 'Separators',
             type: 'mapline',
             data: Highcharts.geojson(Highcharts.maps['countries/us/us-all'], 'mapline'),
             color: 'silver',
-            showInLegend: false,
+            showInLegend: true,
             enableMouseTracking: false
         }]
     });
