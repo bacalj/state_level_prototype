@@ -4,210 +4,207 @@ $(function () {
     var data = [
         {
             "hc-key": "us-ma",
-            "value": 0
+            "value": 63
         },
         {
             "hc-key": "us-wa",
-            "value": 1
+            "value": 55.6
         },
         {
             "hc-key": "us-ca",
-            "value": 2
+            "value": 'DSU'
         },
         {
             "hc-key": "us-or",
-            "value": 3
+            "value": 'DSU'
         },
         {
             "hc-key": "us-nv",
-            "value": 4
+            "value": 53.8
         },
         {
             "hc-key": "us-nm",
-            "value": 5
+            "value": 72.1
         },
         {
             "hc-key": "us-co",
-            "value": 6
+            "value": 'DSU'
         },
         {
             "hc-key": "us-wy",
-            "value": 7
+            "value": 67.2
         },
         {
             "hc-key": "us-wi",
-            "value": 8
+            "value": 62.8
         },
         {
             "hc-key": "us-ks",
-            "value": 9
+            "value": 'DSU'
         },
         {
             "hc-key": "us-ne",
-            "value": 10
+            "value": 'DSU'
         },
         {
             "hc-key": "us-me",
-            "value": 11
+            "value": 'DSU'
         },
         {
             "hc-key": "us-ok",
-            "value": 12
+            "value": 'DSU'
         },
         {
             "hc-key": "us-mo",
-            "value": 13
+            "value": 59.1
         },
         {
             "hc-key": "us-mi",
-            "value": 14
+            "value": 'DSU'
         },
         {
             "hc-key": "us-il",
-            "value": 15
+            "value": 61.1
         },
         {
             "hc-key": "us-in",
-            "value": 16
+            "value": 67.0
         },
         {
             "hc-key": "us-vt",
-            "value": 17
+            "value": 62.8
         },
         {
             "hc-key": "us-az",
-            "value": 18
+            "value": 60.1
         },
         {
             "hc-key": "us-ar",
-            "value": 19
+            "value": 'DSU'
         },
         {
             "hc-key": "us-tx",
-            "value": 20
+            "value": 60.7
         },
         {
             "hc-key": "us-id",
-            "value": 21
+            "value": 'DSU'
         },
         {
             "hc-key": "us-ri",
-            "value": 22
+            "value": 'DSU'
         },
         {
             "hc-key": "us-al",
-            "value": 23
+            "value": 64.3
         },
         {
             "hc-key": "us-ga",
-            "value": 24
+            "value": 70.1
         },
         {
             "hc-key": "us-ms",
-            "value": 25
+            "value": 'DSU'
         },
         {
             "hc-key": "us-sc",
-            "value": 26
+            "value": 63.2
         },
         {
             "hc-key": "us-nc",
-            "value": 27
+            "value": 58.2
         },
         {
             "hc-key": "us-va",
-            "value": 28
+            "value": 66.5
         },
         {
             "hc-key": "us-ia",
-            "value": 29
+            "value": 67.2
         },
         {
             "hc-key": "us-md",
-            "value": 30
+            "value": 'DSU'
         },
         {
             "hc-key": "us-de",
-            "value": 31
+            "value": 51.5
         },
         {
             "hc-key": "us-nj",
-            "value": 32
+            "value": 59.2
         },
         {
             "hc-key": "us-pa",
-            "value": 33
+            "value": 61.2
         },
         {
             "hc-key": "us-ny",
-            "value": 34
+            "value": 'DSU'
         },
         {
             "hc-key": "us-sd",
-            "value": 35
+            "value": 'DSU'
         },
         {
             "hc-key": "us-ct",
-            "value": 36
+            "value": 53.8
         },
         {
             "hc-key": "us-nh",
-            "value": 37
+            "value": 60
         },
         {
             "hc-key": "us-ky",
-            "value": 38
+            "value": 70.9
         },
         {
             "hc-key": "us-oh",
-            "value": 39
+            "value": 65.1
         },
         {
             "hc-key": "us-tn",
-            "value": 40
+            "value": 80.3
         },
         {
             "hc-key": "us-wv",
-            "value": 41
+            "value": 64.8
         },
         {
             "hc-key": "us-dc",
-            "value": 42
+            "value": 69.5
         },
         {
             "hc-key": "us-mn",
-            "value": 43
+            "value": 68.4
         },
         {
             "hc-key": "us-mt",
-            "value": 44
+            "value": 59.1
         },
         {
             "hc-key": "us-la",
-            "value": 45
+            "value": 62.4
         },
         {
             "hc-key": "us-nd",
-            "value": 46
+            "value": 52.5
         },
         {
             "hc-key": "us-fl",
-            "value": 47
+            "value": 60.7
         },
         {
             "hc-key": "us-ut",
-            "value": 48
+            "value": 61.1
         },
         {
             "hc-key": "us-hi",
-            "value": 49
+            "value": 'DSU'
         },
         {
             "hc-key": "us-ak",
-            "value": 50
-        },
-        {
-            "value": 51
+            "value": 56
         }
     ];
 
