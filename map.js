@@ -1,297 +1,125 @@
 $(function () {
 
-    // Prepare demo data
-    var data = [
-        {
-            "hc-key": "us-ma",
-            "value": 63
-        },
-        {
-            "hc-key": "us-wa",
-            "value": 55.6
-        },
-        {
-            "hc-key": "us-ca",
-            "value": 'DSU'
-        },
-        {
-            "hc-key": "us-or",
-            "value": 'DSU'
-        },
-        {
-            "hc-key": "us-nv",
-            "value": 53.8
-        },
-        {
-            "hc-key": "us-nm",
-            "value": 72.1
-        },
-        {
-            "hc-key": "us-co",
-            "value": 'DSU'
-        },
-        {
-            "hc-key": "us-wy",
-            "value": 67.2
-        },
-        {
-            "hc-key": "us-wi",
-            "value": 62.8
-        },
-        {
-            "hc-key": "us-ks",
-            "value": 'DSU'
-        },
-        {
-            "hc-key": "us-ne",
-            "value": 'DSU'
-        },
-        {
-            "hc-key": "us-me",
-            "value": 'DSU'
-        },
-        {
-            "hc-key": "us-ok",
-            "value": 'DSU'
-        },
-        {
-            "hc-key": "us-mo",
-            "value": 59.1
-        },
-        {
-            "hc-key": "us-mi",
-            "value": 'DSU'
-        },
-        {
-            "hc-key": "us-il",
-            "value": 61.1
-        },
-        {
-            "hc-key": "us-in",
-            "value": 67.0
-        },
-        {
-            "hc-key": "us-vt",
-            "value": 62.8
-        },
-        {
-            "hc-key": "us-az",
-            "value": 60.1
-        },
-        {
-            "hc-key": "us-ar",
-            "value": 'DSU'
-        },
-        {
-            "hc-key": "us-tx",
-            "value": 60.7
-        },
-        {
-            "hc-key": "us-id",
-            "value": 'DSU'
-        },
-        {
-            "hc-key": "us-ri",
-            "value": 'DSU'
-        },
-        {
-            "hc-key": "us-al",
-            "value": 64.3
-        },
-        {
-            "hc-key": "us-ga",
-            "value": 70.1
-        },
-        {
-            "hc-key": "us-ms",
-            "value": 'DSU'
-        },
-        {
-            "hc-key": "us-sc",
-            "value": 63.2
-        },
-        {
-            "hc-key": "us-nc",
-            "value": 58.2
-        },
-        {
-            "hc-key": "us-va",
-            "value": 66.5
-        },
-        {
-            "hc-key": "us-ia",
-            "value": 67.2
-        },
-        {
-            "hc-key": "us-md",
-            "value": 'DSU'
-        },
-        {
-            "hc-key": "us-de",
-            "value": 51.5
-        },
-        {
-            "hc-key": "us-nj",
-            "value": 59.2
-        },
-        {
-            "hc-key": "us-pa",
-            "value": 61.2
-        },
-        {
-            "hc-key": "us-ny",
-            "value": 'DSU'
-        },
-        {
-            "hc-key": "us-sd",
-            "value": 'DSU'
-        },
-        {
-            "hc-key": "us-ct",
-            "value": 53.8
-        },
-        {
-            "hc-key": "us-nh",
-            "value": 60
-        },
-        {
-            "hc-key": "us-ky",
-            "value": 70.9
-        },
-        {
-            "hc-key": "us-oh",
-            "value": 65.1
-        },
-        {
-            "hc-key": "us-tn",
-            "value": 80.3
-        },
-        {
-            "hc-key": "us-wv",
-            "value": 64.8
-        },
-        {
-            "hc-key": "us-dc",
-            "value": 69.5
-        },
-        {
-            "hc-key": "us-mn",
-            "value": 68.4
-        },
-        {
-            "hc-key": "us-mt",
-            "value": 59.1
-        },
-        {
-            "hc-key": "us-la",
-            "value": 62.4
-        },
-        {
-            "hc-key": "us-nd",
-            "value": 52.5
-        },
-        {
-            "hc-key": "us-fl",
-            "value": 60.7
-        },
-        {
-            "hc-key": "us-ut",
-            "value": 61.1
-        },
-        {
-            "hc-key": "us-hi",
-            "value": 'DSU'
-        },
-        {
-            "hc-key": "us-ak",
-            "value": 56
+    // Load the data from the HTML table and tag it with an upper case name used for joining
+    var data = [],
+    // Get the map data
+        mapData = Highcharts.geojson(Highcharts.maps['countries/us/custom/us-small']);
+
+    Highcharts.data({
+        table: document.getElementById('data'),
+        startColumn: 1,
+        startRow: 1,
+        complete: function (options) {
+            $.each(options.series[0].data, function () {
+                data.push({
+                    ucName: this[0],
+                    value: this[1]
+                });
+            });
         }
-    ];
+    });
+
+    // Process mapdata
+    $.each(mapData, function () {
+        var path = this.path,
+            copy = { path: path };
+
+        // This point has a square legend to the right
+        if (path[1] === 1730) {
+
+            // Identify the box
+            Highcharts.seriesTypes.map.prototype.getBox.call(0, [copy]);
+
+            // Place the center of the data label in the center of the point legend box
+            this.middleX = ((path[1] + path[4]) / 2 - copy._minX) / (copy._maxX - copy._minX);
+            this.middleY = ((path[2] + path[7]) / 2 - copy._minY) / (copy._maxY - copy._minY);
+
+        }
+        // Tag it for joining
+        this.ucName = this.name.toUpperCase();
+    });
+
+
+
 
     // Initiate the chart
-    $('#mymap').highcharts('Map', {
+    $('#container').highcharts('Map', {
 
-        title : {
-            text : 'State Level Data Title'
+        title: {
+            text: null
         },
 
-        subtitle : {
-            text : 'Source map: <a href="http://code.highcharts.com/mapdata/countries/us/us-all.js">United States of America</a>'
-        },
-
-        legend: {
-            enabled: true,
-            layout:'horizontal'
+        subtitle: {
+            text: null
         },
 
         mapNavigation: {
             enabled: false,
-            buttonOptions: {
-                verticalAlign: 'bottom'
+            enableButtons: false
+        },
+
+        xAxis: {
+            labels: {
+                enabled: false
             }
         },
 
-        
-            colorAxis: {
-                dataClasses: [{
-                    to: 59.1,
-                    color: 'rgba(19,64,117,0.05)'
-                }, {
-                    from: 59.1,
-                    to: 61.15,
-                    color: 'rgba(19,64,117,0.2)'
-                }, {
-                    from: 61.15,
-                    to: 64.95,
-                    color: 'rgba(19,64,117,0.4)'
-                }, {
-                    from: 64.95,
-                    to: 70.5,
-                    color: 'rgba(19,64,117,0.5)'
-                }/*, {
-                    from: 100,
-                    to: 300,
-                    color: 'rgba(19,64,117,0.6)'
-                }, {
-                    from: 300,
-                    to: 1000,
-                    color: 'rgba(19,64,117,0.8)'
-                }, {
-                    from: 1000,
-                    color: 'rgba(19,64,117,1)'
-                }*/]
-            },
-    
+        legend: {
+            enabled:true,
+            layout:'horizontal'
+        },
 
-        series : [{
-            data : data,
-            mapData: Highcharts.maps['countries/us/us-all'],
-            joinBy: 'hc-key',
-            name: 'Screening',
+        exporting: {
+            enabled:false
+        },
+
+        colorAxis: {
+            dataClasses:[
+                {
+                    to:59.1, 
+                    color:'yellow'
+                },
+
+                {
+                    from:59.1,
+                    to:61.5,
+                    color:'orange'
+                },
+
+                {
+                    from:61.15,
+                    to:70.5,
+                    color:'red'
+                }
+            ]
+        },
+
+        series: [{
+            mapData : mapData,
+            data: data,
+            joinBy: 'ucName',
+            name: 'Unemployment rate per 2014',
             states: {
                 hover: {
                     color: '#BADA55'
                 }
             },
-
             dataLabels: {
                 enabled: true,
                 formatter: function () {
                     return this.point.properties['hc-a2'];
                 },
-                
                 style: {
-                    fontSize: '9px'
+                    fontSize: '10px'
                 }
-            },  
-
+            },
+            tooltip: {
+                valueSuffix: '%'
+            }
         }, {
-            name: 'Separators',
             type: 'mapline',
-            data: Highcharts.geojson(Highcharts.maps['countries/us/us-all'], 'mapline'),
-            color: 'silver',
-            showInLegend: true,
-            enableMouseTracking: false
+            data: Highcharts.geojson(Highcharts.maps['countries/us/custom/us-small'], 'mapline'),
+            color: 'silver'
         }]
     });
 });

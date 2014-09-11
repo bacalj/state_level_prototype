@@ -5,7 +5,9 @@
 	<title>State Level Data</title>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script src="http://code.highcharts.com/maps/highmaps.js"></script>
-	<script src="http://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
+	<script src="http://code.highcharts.com/maps/modules/data.js"></script>
+	<script src="http://code.highcharts.com/maps/modules/exporting.js"></script>
+	<script src="http://code.highcharts.com/mapdata/countries/us/custom/us-small.js"></script>
 	<script type="text/javascript" src="map.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="style.css">	
@@ -15,9 +17,9 @@
 <div id="body-wrapper">
 	<div id='branding'></div>
 	<div id='navigation'></div>
-	<div id="page-wrap">
+	<div id="page-wrap" style="height:100%;">
 		
-		<!-- title Area -->
+		<!-- title Area OK-->
 		<div class='title-wrap bb'>
 			<div class='help-button'>?</div>
 			<div class='icon'><img style="width:50px;" src="img/usa.png"></div>
@@ -48,41 +50,292 @@
 				<img src="img/right-arrows.png">
 			</div>
 		</div>
-		
-		<!--map Area-->
-		<div id="map-wrap">
-			<div id="mymap"></div>
-		</div> 
 
-		<!--map footnotes-->
+		<!--map Area OK -->
+		<div id="container"></div>
+		
+		<!--map footnotes OK -->
 		<div class='footnote-wrap bb' style="padding-bottom:8px;">
 			<strong>Data Source:</strong> National Health Interview Survey (NHIS). Centers for Disease Control and Prevention, National Center for Health Statistics.<br>
 			<strong>Error Bar(I)</strong> represents the 90% confidence interval.<br>
 			Additional footnotes may apply to these data. Please refer to footnotes below the data table for further information. 
 		</div>
 
+	
 		<!--data table heading-->
 		<h2>C-16 Increase the proportion of adults who receive a colorectal cancer screening based on the most recent guidelines</h2>
 		<p style="margin-top:-12px; font-size:11px;">Adults receiving colorectal cancer screening based on most recent guidelines (age adjusted, percent, 50–75 years)</p>
+	
+		<table id="data" style="width:300px; float:left;">
+        <tr>
+            
+            <tr>
+                <th>Rank</th>
+                <th>State</th>
+                <th>Year</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>NORTH DAKOTA</td>
+                <td>52.5</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>VERMONT</td>
+                <td>62.8</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>NEBRASKA</td>
+                <td>DSU</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>WYOMING</td>
+                <td>67.2</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>SOUTH DAKOTA</td>
+                <td>DSU</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>UTAH</td>
+                <td>67.2</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>IOWA</td>
+                <td>67.2</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>HAWAII</td>
+                <td>DSU</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>NEW HAMPSHIRE</td>
+                <td>60</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>LOUISIANA</td>
+                <td>62.4</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>OKLAHOMA</td>
+                <td>DSU</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>MINNESOTA</td>
+                <td>68.4</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>KANSAS</td>
+                <td>DSU</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>MONTANA</td>
+                <td>59.1</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>VIRGINIA</td>
+                <td>66.5</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>IDAHO</td>
+                <td>DSU</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>TEXAS</td>
+                <td>60.7</td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>SOUTH CAROLINA</td>
+                <td>63.2</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>MARYLAND</td>
+                <td>DSU</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>INDIANA</td>
+                <td>67.0</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>MAINE</td>
+                <td>DSU</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>OHIO</td>
+                <td>65.1</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>PENNSYLVANIA</td>
+                <td>61.2</td>
+            </tr>
+            <tr>
+                <td>24</td>
+                <td>DELAWARE</td>
+                <td>51.5</td>
+            </tr>
+            <tr>
+                <td>24</td>
+                <td>WISCONSIN</td>
+                <td>62.8</td>
+            </tr>
+            <tr>
+                <td>26</td>
+                <td>COLORADO</td>
+                <td>DSU</td>
+            </tr>
+            <tr>
+                <td>26</td>
+                <td>MASSACHUSETTS</td>
+                <td>63.0</td>
+            </tr>
+            <tr>
+                <td>26</td>
+                <td>WEST VIRGINIA</td>
+                <td>64.8</td>
+            </tr>
+            <tr>
+                <td>29</td>
+                <td>WASHINGTON</td>
+                <td>55.6</td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td>FLORIDA</td>
+                <td>60.7</td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td>NORTH CAROLINA</td>
+                <td>58.2</td>
+            </tr>
+            <tr>
+                <td>32</td>
+                <td>TENNESSEE</td>
+                <td>80.3</td>
+            </tr>
+            <tr>
+                <td>33</td>
+                <td>ALASKA</td>
+                <td>56.0</td>
+            </tr>
+            <tr>
+                <td>34</td>
+                <td>ARKANSAS</td>
+                <td>DSU</td>
+            </tr>
+            <tr>
+                <td>34</td>
+                <td>MISSOURI</td>
+                <td>59.1</td>
+            </tr>
+            <tr>
+                <td>36</td>
+                <td>NEW YORK</td>
+                <td>DSU</td>
+            </tr>
+            <tr>
+                <td>37</td>
+                <td>NEW MEXICO</td>
+                <td>72.1</td>
+            </tr>
+            <tr>
+                <td>38</td>
+                <td>ALABAMA</td>
+                <td>64.3</td>
+            </tr>
+            <tr>
+                <td>38</td>
+                <td>ARIZONA</td>
+                <td>60.1</td>
+            </tr>
+            <tr>
+                <td>38</td>
+                <td>CONNECTICUT</td>
+                <td>53.8</td>
+            </tr>
+            <tr>
+                <td>38</td>
+                <td>NEW JERSEY</td>
+                <td>59.2</td>
+            </tr>
+            <tr>
+                <td>38</td>
+                <td>OREGON</td>
+                <td>DSU</td>
+            </tr>
+            <tr>
+                <td>43</td>
+                <td>GEORGIA</td>
+                <td>70.1</td>
+            </tr>
+            <tr>
+                <td>44</td>
+                <td>MICHIGAN</td>
+                <td>DSU</td>
+            </tr>
+            <tr>
+                <td>45</td>
+                <td>DISTRICT OF COLUMBIA</td>
+                <td>69.5</td>
+            </tr>
+            <tr>
+                <td>45</td>
+                <td>MISSISSIPPI</td>
+                <td>DSU</td>
+            </tr>
+            <tr>
+                <td>47</td>
+                <td>KENTUCKY</td>
+                <td>70.9</td>
+            </tr>
+            <tr>
+                <td>48</td>
+                <td>CALIFORNIA</td>
+                <td>DSU</td>
+            </tr>
+            <tr>
+                <td>49</td>
+                <td>ILLINOIS</td>
+                <td>61.1</td>
+            </tr>
+            <tr>
+                <td>50</td>
+                <td>NEVADA</td>
+                <td>53.8</td>
+            </tr>
+            <tr>
+                <td>51</td>
+                <td>RHODE ISLAND</td>
+                <td>DSU</td>
+            </tr>
+  	</table>
 
-		<!--data table-->
-		<div class='table-wrap'>
-			<table><tbody>
-				<tr>
-					<th class="left">Populations</th>
-				<tr>
+  	<div class="clearfix" style="height:20px;"></div>
 
-				<tr>
-					<td>I </td>
-					<td>like </td>
-					<td>cheese</td>
-					<td>today </td>
-				</tr>
-			</tbody></table>
-		</div>
-
-	</div>
+  </div>
 </div>
+
 </body>
 </html>
 
