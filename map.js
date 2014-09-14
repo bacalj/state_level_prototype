@@ -11,6 +11,7 @@ $(function () {
         startRow: 1,
         complete: function (options) {
             $.each(options.series[0].data, function () {
+                console.log(this);
                 data.push({
                     ucName: this[0],
                     value: this[1]
@@ -58,6 +59,26 @@ $(function () {
             enableButtons: false
         },
 
+        tooltip: {
+            enabled:true,
+            formatter: function(){
+                var txt = "";
+                    txt += this.series.name + "<br />";
+                    if(typeof this.point.value === 'number'){
+                        txt += this.point.name + ": <b>" + this.point.value + "%</b>";
+                    }else if(this.point.value == "DNC"){
+                        txt += this.point.name + ": <b>Data Not Collected</b>";
+                    }else if(this.point.value == "DNA"){
+                        txt += this.point.name + ": <b>Data Not Available</b>";
+                    }else if(this.point.value == "DSU"){
+                        txt += this.point.name + ": <b>Data Statistically Unreliable</b>";
+                    }else{
+                        txt += this.point.name + ": <b>"+this.point.value+"</b>";
+                    }
+                    return txt;
+            }
+        },
+
         xAxis: {
             labels: {
                 enabled: false
@@ -73,37 +94,50 @@ $(function () {
             enabled:false
         },
 
+        colors:['rgb(107,174,214)','rgb(66,146,198)','rgb(33,113,181)','rgb(8,81,156)','rgb(8,48,107)'],
+
         colorAxis: {
-            dataClasses:[
-                {
-                    to:59.1, 
-                    color:'yellow'
+            dataClassColor:'category',
+            dataClasses:[       
+                { 
+                    from:0, to: 59.15, name:'0-<59.1%'
                 },
 
-                {
-                    from:59.1,
-                    to:61.5,
-                    color:'orange'
+                { 
+                    from:59.16, to:61.15, name:'59.1-<61.15%'
                 },
 
-                {
-                    from:61.15,
-                    to:70.5,
-                    color:'red'
-                }
-            ]
-        },
+                { 
+                    from:61.16, to:64.95, name:'61.15-<64.95%'
+                },
+
+                { 
+                    from:64.96, to:70.5, name:'64.95-<70.5%'
+                },
+
+                { 
+                    to:'DSU', from:'DSU', name:'Data Statistically Unreliable', color:"#fee391" 
+                },
+
+                { 
+                    to:'DNC', from:'DNC', name:'Data Not Collected', color:"#fff799" 
+                },
+
+                ],
+            },
+
 
         series: [{
             mapData : mapData,
             data: data,
             joinBy: 'ucName',
-            name: 'Unemployment rate per 2014',
+            name: 'Year: 2009',
             states: {
                 hover: {
-                    color: '#BADA55'
+                    color: '#c0c0c0'
                 }
             },
+
             dataLabels: {
                 enabled: true,
                 formatter: function () {
@@ -113,10 +147,9 @@ $(function () {
                     fontSize: '10px'
                 }
             },
-            tooltip: {
-                valueSuffix: '%'
-            }
-        }, {
+        }, 
+
+        {
             type: 'mapline',
             data: Highcharts.geojson(Highcharts.maps['countries/us/custom/us-small'], 'mapline'),
             color: 'silver'

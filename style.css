@@ -82,7 +82,7 @@ li, p {
 
 .title-text-area {
 	padding-left: 10px;
-	width:700px;
+	width:770px;
 	margin-top: -17px;
 	height:54px;
 }
@@ -103,15 +103,13 @@ li, p {
 }
 
 #subtitle-text{
-	font-size: 11px;
+	font-size: 12px;
 	font-weight: bold;
 }
 
 #sub-subtitle-text {
 	font-size: 10px;
 }
-
-
 
 
 /* the transport bar */
@@ -214,13 +212,11 @@ th {
 	vertical-align: middle;
 }
 
-/*rather than restructure data am just hiding this for now*/
+/*rather than restructure data am just hiding this for now
 table tr th:first-child,
 table tr td:first-child { 
 	display: none;
-}
-
-
+}*/
 
 /* footnote area */ 
 p#data-source {
@@ -242,8 +238,11 @@ p#data-source {
 
 .footnote-wrap {
 	font-size: 11px;
+	margin-bottom: 20px;
 }
 
 .clearfix {
 	clear:both;
 }
+
+table#data {display:none;}
