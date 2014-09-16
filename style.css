@@ -182,9 +182,8 @@ li, p {
 	z-index: 9999 !important;
 	padding: 0px;
 	white-space: normal;
-	padding:15px;
+	padding:15px;t
 }
-
 
 
 /* Data text and table area */
@@ -195,11 +194,12 @@ table {
 	border-collapse: collapse;
 	margin: 0 auto;
 	clear:both;
+	margin-top: 20px;
 }
 
 td {
 	padding:5px;
-	border-bottom: 2px solid #f3f3f3;
+	border-bottom: 2px solid #E6EAED;
 	vertical-align: top;
 	//border:1px dotted green;
 }
@@ -207,9 +207,24 @@ td {
 th {
 	text-align: left;
 	height:20px;
-	border-top: 2px solid #f3f3f3;
-	border-bottom: 2px solid #f3f3f3;
+	border-top: 2px solid #E6EAED;
+	border-bottom: 2px solid #E6EAED;
 	vertical-align: middle;
+}
+
+th.state {
+	font-weight: normal;
+}
+
+
+th.top {
+	color: #0980AF;
+	border: none;
+}
+
+th.year {
+	width:100px;
+	background-color: #E6EAED;
 }
 
 /*rather than restructure data am just hiding this for now
