@@ -260,4 +260,17 @@ p#data-source {
 	clear:both;
 }
 
+.footer {
+	height: 130px;
+	background-color: #C8CCD8;
+}
+
+.prefooter {
+	background-color:#234f73;
+	height: 43px;
+	position: relative;
+	width:100%;
+	padding:0px;
+}
+
 table#data {display:none;}
