@@ -72,6 +72,9 @@ $(function () {
                         txt += this.point.name + ": <b>Data Not Available</b>";
                     }else if(this.point.value == "DSU"){
                         txt += this.point.name + ": <b>Data Statistically Unreliable</b>";
+                    }else if (this.point.value =='TM'){
+                        txt += this.point.name + ": <b>Target Met or Exceeded</b>";
+
                     }else{
                         txt += this.point.name + ": <b>"+this.point.value+"</b>";
                     }
@@ -103,45 +106,28 @@ $(function () {
 
         colorAxis: {
             dataClassColor:'category',
-            dataClasses:[       
+            dataClasses:[   
+
+                //code 3= 0-<59.1%, code 4= 59.1-<61.15%, code 5= 61.15-<64.95%, code 6=64.95-<70.5%, code -1 = Data are statistically unreliable, code 7 = Target met or exceeded    
                 { 
-                    from:0, to: 59.15, name:'0-<36.7%'
+                    from:0, to: 59.1, name:'0-<59.1%'
                 },
 
                 { 
-                    from:59.16, to:61.15, name:'0-<54%'
+                    from:59.16, to:61.15, name:'59.1-<61.15%'
                 },
 
                 { 
-                    from:61.16, to:64.95, name:'0-<58.8%'
+                    from:61.16, to:64.95, name:'61.15-<64.95%'
                 },
 
                 { 
-                    from:64.96, to:70.5, name:'0-<59.1%'
+                    from:64.96, to:70.5, name:'64.95-<70.5%'
                 },
-
-                //0-<58.8%, 0-<59.1%, 0-<59.8%, 58.8-<63.2%
-
-                { 
-                    from:64.96, to:70.5, name:'0-<59.8%'
-                },
-
-                { 
-                    from:64.96, to:70.5, name:'0-<59.1%'
-                },
-
-                { 
-                    from:64.96, to:70.5, name:'0-<59.1%'
-                },
-
-                { 
-                    from:64.96, to:70.5, name:'0-<59.1%'
-                },
-
 
                 { 
                     to:'DSU', from:'DSU', name:'Data Statistically Unreliable', color:"#fde295" 
-                },
+                }
 
                 /*{ 
                     to:'DNC', from:'DNC', name:'Data Not Collected', color:"#fef59c" 
