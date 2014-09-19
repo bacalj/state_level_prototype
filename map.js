@@ -85,6 +85,10 @@ $(function () {
             }
         },
 
+        credits: {
+            enabled: false
+        },
+
         legend: {
             enabled:true,
             layout:'horizontal'
@@ -95,35 +99,53 @@ $(function () {
         },
 
         //colors:['rgb(107,174,214)','rgb(66,146,198)','rgb(33,113,181)','rgb(8,81,156)','rgb(8,48,107)'],
-        //colors: ['#0C326A', '#14549a', '#2873b3', '#4894C3'],
-        colors: [ '#4894C3','#2873b3', '#14549a', '#0C326A'],
+        colors: [ '#A9cfe6', '#6fafd5', '#4894c3', '#2873b3', '#14549a', '#0c326a', '#061935'],
 
         colorAxis: {
             dataClassColor:'category',
             dataClasses:[       
                 { 
-                    from:0, to: 59.15, name:'0-<59.1%'
+                    from:0, to: 59.15, name:'0-<36.7%'
                 },
 
                 { 
-                    from:59.16, to:61.15, name:'59.1-<61.15%'
+                    from:59.16, to:61.15, name:'0-<54%'
                 },
 
                 { 
-                    from:61.16, to:64.95, name:'61.15-<64.95%'
+                    from:61.16, to:64.95, name:'0-<58.8%'
                 },
 
                 { 
-                    from:64.96, to:70.5, name:'64.95-<70.5%'
+                    from:64.96, to:70.5, name:'0-<59.1%'
                 },
+
+                //0-<58.8%, 0-<59.1%, 0-<59.8%, 58.8-<63.2%
+
+                { 
+                    from:64.96, to:70.5, name:'0-<59.8%'
+                },
+
+                { 
+                    from:64.96, to:70.5, name:'0-<59.1%'
+                },
+
+                { 
+                    from:64.96, to:70.5, name:'0-<59.1%'
+                },
+
+                { 
+                    from:64.96, to:70.5, name:'0-<59.1%'
+                },
+
 
                 { 
                     to:'DSU', from:'DSU', name:'Data Statistically Unreliable', color:"#fde295" 
                 },
 
-                { 
+                /*{ 
                     to:'DNC', from:'DNC', name:'Data Not Collected', color:"#fef59c" 
-                },
+                },*/
 
                 ],
             },
