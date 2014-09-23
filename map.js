@@ -97,6 +97,15 @@ $(function () {
             layout:'horizontal'
         },
 
+        //plotOptions.mapline.events.legendItemClick
+        plotOptions: {
+            mapline: {
+                events: {
+                    legendItemClick: function (e) {e.preventDefault()}
+                }
+            }
+        },
+
         exporting: {
             enabled:false
         },
@@ -114,15 +123,19 @@ $(function () {
                 },
 
                 { 
-                    from:59.16, to:61.15, name:'59.1-<61.15%'
+                    from:59.1, to:61.15, name:'59.1-<61.15%'
                 },
 
                 { 
-                    from:61.16, to:64.95, name:'61.15-<64.95%'
+                    from:61.15, to:64.95, name:'61.15-<64.95%'
                 },
 
                 { 
-                    from:64.96, to:70.5, name:'64.95-<70.5%'
+                    from:64.95, to:70.5, name:'64.95-<70.5%'
+                },
+
+                {
+                    from:70.5, to:100.0, name: 'Target met or exceeded', color: 'green'
                 },
 
                 { 
