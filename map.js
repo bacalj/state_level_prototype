@@ -99,7 +99,7 @@ $(function () {
 
         //plotOptions.mapline.events.legendItemClick
         plotOptions: {
-            mapline: {
+            series: {
                 events: {
                     legendItemClick: function (e) {e.preventDefault()}
                 }
